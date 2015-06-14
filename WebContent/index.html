@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -45,6 +48,78 @@
 <link rel="shortcut icon" href="http://www.kalimbaradio.com/favicon.ico"
 	type="image/x-icon" />
 </head>
+
+<script>
+
+function SendMail(){
+	//alert("mail sent");
+	var userName=document.getElementById("name").value;
+	//alert("111"+userName+"1111");
+	if(!validateName(userName)){
+		return false;
+	}
+	
+	var userEmail=document.getElementById("email").value;
+ 	if(!validateEmail(userEmail)){
+ 		return false;
+ 	}
+ 	
+	var userTelephone=document.getElementById("telephone").value;
+	if(!validatePhone(userTelephone)){
+		return false;
+	}
+	
+	var userMessage=document.getElementById("message").value;
+	if(userMessage.length==0){
+		alert("Please enter your message to kalimba");
+		return false;
+	}
+	var link = "mailto:info@kalimbaradio.com"+
+    "?subject=" + escape("From : "+userName)+
+    "&body=" + escape("Email : "+userEmail+"\nPhone Number : "+userTelephone+"\nBody:\n"+userMessage);
+	//alert(link);
+window.location.href = link;
+} 
+
+
+
+function validateEmail(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    
+    if(!re.test(email)){
+    	alert("Please enter your email id in correct format.");
+    	
+    	return false;
+    }
+    else{
+    	return true;
+    }
+}
+
+function validateName(name) {
+   // var re = /^[a-zA-Z0-9]*[a-zA-Z]+[a-zA-Z0-9]*$/;
+    if(name.length==0){
+    	alert("Please enter your Name.");
+    	return false;
+    }
+    else{
+    	return true;
+    }
+}
+
+function validatePhone(phone) {
+    var re = /^[\s()+-]*([0-9][\s()+-]*){6,20}$/;
+    if(re.test(phone)){
+    	alert("Please enter your phone number.");
+    	return false;
+    }
+    else{
+    	return true;
+    }
+}
+</script>
+
+
 <body>
 	<div id="menu">
 		<nav class="navbar navbar-default" role="navigation">
@@ -66,7 +141,7 @@
 				<div class="collapse navbar-collapse" id="menu-content">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#service">About</a></li>
-						<li><a href="#achievement">Cata/louge</a></li>
+						<li><a href="#achievement">Catalogue</a></li>
 						<li><a href="#project">Artists</a></li>
 						<li><a href="#team">Team</a></li>
 						<li><a href="#contact">Contact</a></li>
@@ -86,19 +161,19 @@
 					<!-- <i class="icon_lightbulb_alt"></i>
 					<h2>Our vision</h2> -->
 
-					<div class="sep"></div>
+					<!--  <div class="sep"></div>-->
 
 				</div>
 			</div>
 
 
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-sm-6 col-sm-offset-3">
-					<!-- <h4>Design is transforming the whole world. We will help you to be a part of it</h4> -->
+					<h4>Design is transforming the whole world. We will help you to be a part of it</h4>
 					<i class="arrow_triangle-right_alt2" data-toggle="modal"
 						data-target="#myModal"></i>
 				</div>
-			</div>
+			</div> -->
 		</div>
 
 		<!-- Modal -->
@@ -132,7 +207,7 @@
 						<br> <b><em style="font: bold;">Free music, anytime,
 								anywhere.</em></b>
 					</h3>
-					<img class="dwn-button" src="img/download_now_03.png">
+					<a href="https://play.google.com/store/apps/details?id=net.sourceforge.kalimbaradio.androidapp"><img class="dwn-button" src="img/download_now_03.png"></a>
 				</div>
 			</div>
 
@@ -140,7 +215,7 @@
 			<div class="row">
 				<div class="col-sm-4 item">
 
-					<div style="width: 200px;height : 30px;margin-left:25%;">
+					<div style="width: 200px;height : 30px;margin-left:auto;">
 						<i class="icon_mobile"></i>
 					</div>
 					<div style="margin: auto">
@@ -152,7 +227,7 @@
 				</div>
 				<div class="col-sm-4 item">
 					<div class="">
-						<div style="width: 200px; height: 30px; margin-left: 25%;">
+						<div style="width: 200px; height: 30px; margin-left:auto ;">
 							<i class="icon_headphones"></i>
 						</div>
 						<div>
@@ -164,7 +239,7 @@
 				</div>
 				<div class="col-sm-4 item">
 					<div class="">
-						<div style="left: 90px; right: 10px; padding: 30px;">
+						<div style="width: 200px; height: 30px; margin-left: auto;">
 							<i class="icon_cogs"></i>
 						</div>
 						<div>
@@ -180,20 +255,20 @@
 	<section id="achievement" class="achievement alt">
 		<div class="container">
 
-			<div class="row sec-header">
+			<!--  <div class="row sec-header">
 				<div class="col-sm-6 col-sm-offset-3">
 					<h2>Our catalouge</h2>
 					<div class="sep"></div>
 
 				</div>
-			</div>
+			</div>-->
 
 
 			<div class="row">
 				<div class="col-sm-3 item">
 					<div class="">
 						<span> <i class="icon_mic"></i>
-						</span> <span class="stat"> 140 </span>
+						</span> <span class="stat"> 197 </span>
 					</div>
 					<div class="sep"></div>
 					<div>
@@ -203,7 +278,7 @@
 				<div class="col-sm-3 item">
 					<div class="">
 						<span> <i class="icon_music"></i>
-						</span> <span class="stat"> 1858 </span>
+						</span> <span class="stat"> 2190 </span>
 					</div>
 					<div class="sep"></div>
 					<div>
@@ -213,7 +288,7 @@
 				<div class="col-sm-3 item">
 					<div class="">
 						<span> <i class="icon_clock_alt"></i>
-						</span> <span class="stat"> 135 </span>
+						</span> <span class="stat"> 179 </span>
 					</div>
 					<div class="sep"></div>
 					<div>
@@ -223,7 +298,7 @@
 				<div class="col-sm-3 item">
 					<div class="">
 						<span> <i class="icon_ul"></i>
-						</span> <span class="stat"> 10 </span>
+						</span> <span class="stat"> 14 </span>
 					</div>
 					<div class="sep"></div>
 					<div>
@@ -409,8 +484,8 @@
 				<div class="row">
 
 					<div class="col-sm-4 item">
-						<h3>get in touch with us.</h3>
-						<p>
+						<h3 style="text-align:left">get in touch with us.</h3>
+						<p style="text-align:left">
 							We are based out of Lowell, Massachusetts <br> and have team
 							members in India and Africa. <br> We love to hear from our
 							listeners, artists and advertisers so feel free to send us a
@@ -419,21 +494,21 @@
 						<ul>
 							<li><i class="icon_house"></i>Lowell, Massachusetts</li>
 							<li><i class="icon_mail"></i><a
-								href="mailto:info@kalimbaradio.com">info@kalimbaradio.com</a></li>
+								href="mailto:info@kalimbaradio.com" style="color: blue">info@kalimbaradio.com</a></li>
 						</ul>
 					</div>
 
 					<div class="col-sm-8 item">
-						<form>
+						<form action="index.jsp">
 							<div class="row">
 								<div class="col-sm-4">
-									<input name="name" placeholder="Name"> <input
-										name="email" placeholder="Email"> <input
-										name="telephone" placeholder="Telephone">
+									<input name="name" id="name" placeholder="Name"> <input pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+										required name="email" id="email" placeholder="Email"> <input
+										name="telephone" id="telephone" placeholder="Telephone">
 								</div>
 								<div class="col-sm-8">
-									<textarea name="message" placeholder="Message"></textarea>
-									<a class="btn btn-default"> Send </a>
+									<textarea name="message" id="message" placeholder="Message"></textarea>
+									<a class="btn btn-default" onclick='SendMail();'> Send </a>
 								</div>
 							</div>
 						</form>
